@@ -47,12 +47,19 @@ public class GameMap {
                 }
                 explored[current.getX()][current.getY()] = bombs;
             }
-
         }
-        //explored[x][y] = hidden.check(x, y);
-        //if (explored[x][y] != 0) {  // explore outwards 'til we reach squares that might contain bombs
+    }
 
-        //}
+    public int rows() {
+        return HEIGHT;
+    }
+
+    public int cols() {
+        return WIDTH;
+    }
+
+    public int getSquare(int x, int y) {
+        return explored[x][y];
     }
 
     public void display() {

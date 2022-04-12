@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Minesweeper");
         GameMap map = new GameMap(10,10,0.25);
         map.display();
-        GameGUI gui = new GameGUI(800,600);
+        GameGUI gui = new GameGUI(800,600, map);
 
         // game loop
         Scanner input = new Scanner(System.in);
@@ -18,6 +18,7 @@ public class Main {
             int y = Integer.parseInt(coords.split(",")[1]);
             map.stepOn(x, y);
             map.display();
+            gui.render();
         }
 
     }
